@@ -1,0 +1,20 @@
+__include__: [
+   '../dataset/power_grid_strands.yml',
+#  '../dataset/power_grid_hanging.yml',
+  '../runtime.yml',
+  './include/dataloader.yml',
+  './include/optimizer.yml',
+  './include/rtdetr_r50vd.yml',
+]
+
+RTDETR:
+  multi_scale: [ 640, 640, 640, 672, 704, 736, 768, 800, 832, 864, 896, 928, 960, 960 ]
+
+train_dataloader:
+  batch_size: 8
+  num_workers: 4
+
+use_amp: True
+epoches: 72
+
+output_dir: ./test/strands

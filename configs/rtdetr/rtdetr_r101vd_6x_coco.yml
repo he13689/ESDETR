@@ -1,0 +1,40 @@
+__include__: [
+  '../dataset/algae.yml',
+  '../runtime.yml',
+  './include/dataloader.yml',
+  './include/optimizer.yml',
+  './include/rtdetr_r50vd.yml',
+]
+
+PResNet:
+  depth: 101
+
+RTDETR:
+  multi_scale: [640, 640, 640]
+
+HybridEncoder:
+  # intra
+  hidden_dim: 384
+  dim_feedforward: 2048
+
+
+RTDETRTransformer:
+  feat_channels: [384, 384, 384]
+
+
+optimizer:
+  type: AdamW
+  params: 
+    - 
+      params: 'backbone'
+      lr: 0.000001
+
+epoches: 72
+
+train_dataloader:
+  batch_size: 4
+  num_workers: 4
+
+use_amp: True
+
+output_dir: ./result/rtdetr101

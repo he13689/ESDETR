@@ -1,0 +1,26 @@
+__include__: [
+  '../dataset/power_grid.yml',
+  '../runtime.yml',
+  './include/dataloader.yml',
+  './include/optimizer.yml',
+  './include/yolov10.yml',
+]
+
+YOLO8Backbone:
+  cfg: 'configs/rtdetr/include/backbone10.yml'
+
+train_dataloader:
+  batch_size: 8
+  num_workers: 4
+
+use_amp: False
+epoches: 100
+
+
+optimizer:
+  params:
+    -
+      params: 'backbone'
+      lr: 0.00001
+
+output_dir: ./result/rt50_v10

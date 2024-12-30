@@ -1,0 +1,30 @@
+__include__: [
+  '../dataset/algae.yml',
+  '../runtime.yml',
+  './include/dataloader.yml',
+  './include/optimizer.yml',
+  './include/rtdetr_r50vd.yml',
+]
+
+RTDETR:
+  multi_scale: [640, 640, 640]
+
+train_dataloader:
+  batch_size: 8
+  num_workers: 4
+
+optimizer:
+  params:
+    - params: 'backbone'
+      lr: 0.00002
+  lr: 0.00005
+
+lr_scheduler:
+  type: MultiStepLR
+  milestones: [90]
+  gamma: 0.5
+
+use_amp: True
+epoches: 100
+
+output_dir: ./hyper_result/test2
