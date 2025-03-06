@@ -13,4 +13,6 @@ If you find ES-DETR useful in your research, please consider citing our work:
   year={2025}
 }
 
+The datasets we use in this paper can be reached by contacting us: 375004220@qq.com
+
 This project is licensed under the MIT License.
