@@ -8,9 +8,9 @@ You can find the pretrained in release file: https://github.com/he13689/ESDETR/r
 If you find ES-DETR useful in your research, please consider citing our work:
 @article{es_detr,
   title={ES-DETR: Real-time Detection Transformer with Encover and Soft-Dropout},
-  author={Your Name(s)},
+  author={Y. He},
   journal={arXiv preprint arXiv:xxxx.xxxxx},
-  year={2024}
+  year={2025}
 }
 
 This project is licensed under the MIT License.
